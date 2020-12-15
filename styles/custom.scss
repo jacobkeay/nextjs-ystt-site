@@ -1,0 +1,29 @@
+//Your customizations must come before bootstrap import
+
+$primary: #9a0000;
+
+.overlay-background {
+  background: black;
+}
+
+.overlay-img {
+  opacity: 0.4;
+  width: 100%;
+}
+
+.bg-home-1 {
+  background-color: #da6f89;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.bg-home-2 {
+  background-color: #7ea4eb;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.bg-home-3 {
+  background-color: #3858b1;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+@import "../scss/bootstrap.scss";
