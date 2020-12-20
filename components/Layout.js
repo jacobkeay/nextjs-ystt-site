@@ -5,7 +5,6 @@ import Footer from "./Footer";
 const Layout = props => (
   <div>
     <Head>
-      <title>York Student Think Tank</title>
       <meta
         name="description"
         content="Student-run think tank at the University of York."

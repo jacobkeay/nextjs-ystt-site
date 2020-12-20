@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const HomeCards = () => {
   return (
@@ -12,9 +13,11 @@ const HomeCards = () => {
             Find out more about how we run our research projects, and which of
             those projects are in progress now.
           </p>
-          <button className="btn btn-outline-light">
-            <i className="fas fa-arrow-right"></i> Read More
-          </button>
+          <Link href="/research">
+            <a className="btn btn-outline-light">
+              <i className="fas fa-arrow-right"></i> Our Projects
+            </a>
+          </Link>
         </div>
       </div>
       <div className="col-md-4">
@@ -26,23 +29,27 @@ const HomeCards = () => {
             Join the York Student Think Tank to gain exclusive access to all of
             our events and projects.
           </p>
-          <button className="btn btn-outline-light">
-            <i className="fas fa-arrow-right"></i> Read More
-          </button>
+          <Link href="/contact">
+            <a className="btn btn-outline-light">
+              <i className="fas fa-arrow-right"></i> Get In Touch
+            </a>
+          </Link>
         </div>
       </div>
       <div className="col-md-4">
         <div className="bg-home-3 p-3 m-1">
           <h3>
-            <strong>Events</strong>
+            <strong>Cortado</strong>
           </h3>
           <p>
-            We host a variety of events throughout the academic year, from
-            speakers to workshops to socials.
+            We run a weekly journal on current affairs, and we're always looking
+            for new writers.
           </p>
-          <button className="btn btn-outline-light">
-            <i className="fas fa-arrow-right"></i> Read More
-          </button>
+          <Link href="/cortado">
+            <a className="btn btn-outline-light">
+              <i className="fas fa-arrow-right"></i> Find Out More
+            </a>
+          </Link>
         </div>
       </div>
     </div>

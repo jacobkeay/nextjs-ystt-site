@@ -5,6 +5,9 @@ import HomeText from "../components/HomeText";
 
 const Index = () => (
   <Layout>
+    <Head>
+      <title>Home | YSTT</title>
+    </Head>
     <div className="pt-5 mt-3 text-white text-center overlay-background">
       <img
         src="/york-hall-wide-reduced.jpg"
