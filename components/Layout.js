@@ -24,6 +24,7 @@ const Layout = props => (
     </Head>
     <Navbar />
     {props.children}
+    <div className="m-3 p-3"></div>
     <Footer year={new Date().getFullYear()} />
   </div>
 );

@@ -1,28 +1,21 @@
 import dbConnect from "../../../utils/dbConnect";
-import Admin from "../../../models/Admin";
+import runMiddleware from "../../../utils/runMiddleware";
+import auth from "../../../utils/auth";
 
 dbConnect();
 
 export default async (req, res) => {
   const { method } = req;
   switch (method) {
-    case "GET":
-      try {
-        const notes = await Note.find({});
-        res.status(200).json({ success: true, data: notes });
-      } catch (err) {
-        res.status(400).json({ success: false });
-      }
-      break;
     case "POST":
       try {
-        const note = await Note.create(req.body);
-        res.status(201).json({ success: true, data: note });
+        await runMiddleware(req, res, auth);
+        res.status(200).json({ success: true, data: { msg: `Authorised` } });
       } catch (err) {
-        res.status(400).json({ success: false });
+        res.status(500).json({ success: false });
       }
       break;
     default:
-      res.status(400);
+      res.status(500);
   }
 };
