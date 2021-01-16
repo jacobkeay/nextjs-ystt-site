@@ -34,4 +34,32 @@ $primary: #9a0000;
   max-width: 150px;
 }
 
+.btn-file {
+  max-width: 250px;
+}
+
+/* progress bar styles */
+.progress-bar {
+  height: 15px;
+  background: #9a0000;
+  margin-top: 20px;
+}
+
+.img-dash {
+  max-height: 100px !important;
+}
+
+.img-about {
+  max-height: 200px !important;
+}
+
+.img-research {
+  max-height: 200px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.media-links {
+  width: 400px;
+}
+
 @import "../scss/bootstrap.scss";

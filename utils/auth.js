@@ -7,6 +7,7 @@ export default function auth(req, res, next) {
 
   // Check if no token
   if (!token) {
+    console.log("Unauthorised - no token");
     return res
       .status(401)
       .json({ success: false, data: { msg: "Unauthorised - no token" } });
@@ -17,9 +18,10 @@ export default function auth(req, res, next) {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
     req.user = decoded;
-    console.log("VERIFIED");
+    console.log("Authorised - token valid");
     next();
   } catch (err) {
+    console.log("Unauthorised - token invalid");
     res
       .status(401)
       .json({ success: false, data: { msg: "Unauthorised - token invalid" } });

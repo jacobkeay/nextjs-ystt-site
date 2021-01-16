@@ -10,6 +10,7 @@ export default async (req, res) => {
     case "POST":
       try {
         await runMiddleware(req, res, auth);
+
         res.status(200).json({ success: true, data: { msg: `Authorised` } });
       } catch (err) {
         res.status(500).json({ success: false });

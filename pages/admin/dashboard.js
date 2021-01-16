@@ -7,13 +7,14 @@ import cookie from "js-cookie";
 import Layout from "../../components/Layout";
 import Logout from "../../components/admin/Logout";
 import DashMain from "../../components/admin/DashMain";
+import Spinner from "../../components/Spinner";
 import { server } from "../../config/index";
 
 const Dashboard = props => {
   const [authed, setAuthed] = useState(props.isAuthenticated);
 
-  useEffect(() => {
-    checkAuthed();
+  useEffect(async () => {
+    await checkAuthed();
     if (!authed) {
       Router.push("/admin/login");
     }
@@ -38,13 +39,20 @@ const Dashboard = props => {
       <Head>
         <title>Dashboard | YSTT</title>
       </Head>
-      <div className="container my-5 pt-3">
-        <h1 className="pt-5 text-center">Admin Dashboard</h1>
-        <div className="text-center mt-3 mb-5">
-          <Logout />
+      {!authed && (
+        <div className="container my-5 pt-3">
+          <Spinner />
         </div>
-        <DashMain />
-      </div>
+      )}
+      {authed && (
+        <div className="container my-5 pt-3">
+          <h1 className="pt-5 text-center">Admin Dashboard</h1>
+          <div className="text-center mt-3 mb-5">
+            <Logout />
+          </div>
+          <DashMain />
+        </div>
+      )}
     </Layout>
   );
 };

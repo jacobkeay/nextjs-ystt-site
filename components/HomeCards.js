@@ -5,7 +5,7 @@ const HomeCards = () => {
   return (
     <div className="row text-white text-center">
       <div className="col-md-4">
-        <div className="bg-home-1 p-3 m-1">
+        <div className="rounded bg-home-1 p-3 m-1">
           <h3>
             <strong>Projects</strong>
           </h3>
@@ -21,7 +21,7 @@ const HomeCards = () => {
         </div>
       </div>
       <div className="col-md-4">
-        <div className="bg-home-2 p-3 m-1">
+        <div className="rounded bg-home-2 p-3 m-1">
           <h3>
             <strong>Get Involved</strong>
           </h3>
@@ -37,7 +37,7 @@ const HomeCards = () => {
         </div>
       </div>
       <div className="col-md-4">
-        <div className="bg-home-3 p-3 m-1">
+        <div className="rounded bg-home-3 p-3 m-1">
           <h3>
             <strong>Cortado</strong>
           </h3>

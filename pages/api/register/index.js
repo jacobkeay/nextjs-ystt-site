@@ -26,12 +26,10 @@ export default async (req, res) => {
         admin.password = await bcrypt.hash(password, salt);
 
         await admin.save();
-        res
-          .status(201)
-          .json({
-            success: true,
-            data: { admin, msg: "Admin account created" },
-          });
+        res.status(201).json({
+          success: true,
+          data: { admin, msg: "Admin account created" },
+        });
       } catch (err) {
         res.status(500).json({ success: false });
       }

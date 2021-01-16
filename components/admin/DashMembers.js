@@ -1,16 +1,16 @@
 import React from "react";
+import UploadMembers from "../admin/UploadMembers";
+import ListOnDash from "./ListOnDash";
 
 const DashMembers = () => {
   return (
     <div className="card-body">
-      <h4 className="card-title">Members Section</h4>
-      <p className="card-text">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus vitae
-        quos libero porro repudiandae vel maxime quibusdam exercitationem,
-        voluptas ullam similique blanditiis sapiente impedit alias eligendi.
-        Assumenda rem, molestiae reprehenderit veritatis ad nihil vel harum
-        dolorem maiores molestias iusto possimus?
-      </p>
+      <h4 className="card-title">Add a new member</h4>
+      <UploadMembers />
+      <hr className="mt-5" />
+      <h4 className="card-title">Current members:</h4>
+      <hr />
+      <ListOnDash collection={"members"} />
     </div>
   );
 };
