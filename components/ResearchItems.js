@@ -6,9 +6,9 @@ const ResearchItems = () => {
   return (
     <div className="mt-5">
       {docs &&
-        docs.map(doc => {
+        docs.map((doc, index) => {
           return (
-            <Fragment>
+            <Fragment key={index}>
               <div className="row">
                 <div className="col-md-4 pt-3 text-center">
                   <img

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DashResearch from "./DashResearch";
 import DashMembers from "./DashMembers";
-import DashArticles from "./DashArticles";
+import DashCortado from "./DashCortado";
 
 const DashMain = () => {
   const [tab, setTab] = useState(0);
@@ -12,7 +12,7 @@ const DashMain = () => {
     } else if (tab === 1) {
       return <DashResearch />;
     } else {
-      return <DashArticles />;
+      return <DashCortado />;
     }
   };
 
@@ -41,7 +41,7 @@ const DashMain = () => {
               className={tab === 2 ? "nav-link active" : "nav-link"}
               onClick={() => setTab(2)}
             >
-              Articles
+              Cortado
             </a>
           </li>
         </ul>

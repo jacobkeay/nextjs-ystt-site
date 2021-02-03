@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-class Navbar extends React.Component {
+class BlogNavbar extends React.Component {
   constructor(props) {
     super(props);
     this.toggleNavbar = this.toggleNavbar.bind(this);
@@ -26,17 +26,13 @@ class Navbar extends React.Component {
 
     return (
       <nav
-        className="navbar fixed-top navbar-expand-lg navbar-dark bg-primary"
+        className="navbar fixed-top navbar-expand-lg navbar-dark bg-cortado"
         id="main-nav"
       >
-        <div className="container">
-          <Link href="/">
-            <a className="navbar-brand">
-              <img src="/logo-big-white.png" height="50" alt="image here"></img>
-            </a>
-          </Link>
-          <div className="pt-2">
-            <h5 className="text-white">York Student Think Tank</h5>
+        <div className="container d-flex justify-between align-center">
+          <div className="pt-2 d-flex align-items-center">
+            <img src="/cortado-logo.jpg" height="50" alt="logo here"></img>
+            <h5 className="ml-2 text-white">Cortado Blog</h5>
           </div>
           <button
             onClick={this.toggleNavbar}
@@ -50,37 +46,34 @@ class Navbar extends React.Component {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-
           <div className={`${classOne}`} id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link href="/">
-                  <a className="nav-link">Home</a>
+                <Link href="/cortado/blog">
+                  <a className="nav-link">
+                    <i className="far fa-edit"></i> Blog
+                  </a>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link href="/about">
-                  <a className="nav-link">About</a>
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link href="/research">
-                  <a className="nav-link">Research</a>
+                <Link href="/cortado/about">
+                  <a className="nav-link">
+                    <i className="fas fa-info-circle"></i> About
+                  </a>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link href="/cortado/blog">
-                  <a className="nav-link">Cortado</a>
+                  <a className="nav-link">
+                    <i className="fas fa-search"></i> Find an Article
+                  </a>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link href="/faqs">
-                  <a className="nav-link">FAQs</a>
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link href="/contact">
-                  <a className="nav-link">Get Involved</a>
+                <Link href="/">
+                  <a className="nav-link">
+                    <i className="fas fa-backward"></i> Back to Homepage
+                  </a>
                 </Link>
               </li>
             </ul>
@@ -91,4 +84,4 @@ class Navbar extends React.Component {
   }
 }
 
-export default Navbar;
+export default BlogNavbar;
