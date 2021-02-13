@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import ProgressMembers from "./ProgressMembers";
 
-const UploadMembers = () => {
+const UploadArticle = ({ indexTags, indexIssues }) => {
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
-  const [ready, setReady] = useState(false);
+  const [tags, setTags] = useState([]);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
 
@@ -33,12 +32,30 @@ const UploadMembers = () => {
     <form onSubmit={handleSubmit}>
       <div class="form-group">
         <label htmlFor="issue">For Issue:</label>
-        <select class="form-control" id="issue">
-          <option>Issue #1</option>
-          <option>Issue #2</option>
-          <option>Issue #3</option>
+        <select className="form-control" id="issue">
+          {indexIssues.map((indexIssue, index) => {
+            return <option key={index + 1}>{indexIssue}</option>;
+          })}
         </select>
       </div>
+      <p>Tags:</p>
+      <fieldset class="form-group d-flex">
+        {indexTags.map((indexTag, index) => {
+          return (
+            <div key={index + 1} className="form-check mr-2">
+              <label className="form-check-label">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  value={indexTag}
+                  onChange={e => setTags(tags.push(e.target.value))}
+                />
+                {indexTag}
+              </label>
+            </div>
+          );
+        })}
+      </fieldset>
       <div className="custom-file my-3">
         <input
           type="file"
@@ -88,16 +105,8 @@ const UploadMembers = () => {
           <strong>Error!</strong> {error}
         </div>
       )}
-      {file && ready && (
-        <ProgressMembers
-          file={file}
-          setFile={setFile}
-          data={{ name, description }}
-          setReady={setReady}
-        />
-      )}
     </form>
   );
 };
 
-export default UploadMembers;
+export default UploadArticle;

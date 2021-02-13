@@ -16,7 +16,7 @@ const GuideText = () => {
       </p>
       <div className="text-center">
         <a
-          className="btn btn-outline-primary mb-3"
+          className="btn btn-outline-primary mb-3 disabled"
           href={`https://firebasestorage.googleapis.com/v0/b/ystt-site.appspot.com/o/${fileName}?alt=media&token=${fileToken}`}
           download="guide.pdf"
           target="_blank"

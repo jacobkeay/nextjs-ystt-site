@@ -1,11 +1,10 @@
 import React from "react";
 import useFirestore from "../hooks/useFirestore";
 
-const AboutProfiles = () => {
-  const { docs } = useFirestore("members");
+const AboutProfiles = ({ display }) => {
   return (
     <div className="row mt-5">
-      {docs &&
+      {display &&
         docs.map(doc => {
           return (
             <div className="col-md-4 mb-4" key={doc.id}>

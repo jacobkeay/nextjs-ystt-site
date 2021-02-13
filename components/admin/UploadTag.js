@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const UploadIssue = () => {
+const UploadTag = () => {
   const [error, setError] = useState(null);
   const [name, setName] = useState("");
 
@@ -14,13 +14,13 @@ const UploadIssue = () => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="form-group">
-        <label htmlFor="name">Issue No.</label>
+        <label htmlFor="name">Tag name</label>
         <input
           className="form-control"
           onChange={e => setName(e.target.value)}
           type="text"
           id="name"
-          placeholder="E.g. 'Issue #13'"
+          placeholder="E.g. 'UK Politics'"
         />
       </div>
       <button className="btn btn-sm btn-primary" type="submit">
@@ -30,4 +30,4 @@ const UploadIssue = () => {
   );
 };
 
-export default UploadIssue;
+export default UploadTag;

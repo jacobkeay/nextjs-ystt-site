@@ -1,8 +1,29 @@
 import React, { Fragment } from "react";
-import useFirestore from "../hooks/useFirestore";
+import { useState, useEffect } from "react";
+import fetch from "isomorphic-unfetch";
 
 const ResearchItems = () => {
-  const { docs } = useFirestore("research");
+  const [docs, setDocs] = useState([]);
+
+  const fetchItems = async () => {
+    const server = process.env.API_ADDRESS;
+
+    const res = await fetch(`${server}/api/research`, {
+      method: "GET",
+    });
+
+    const data = await res.json();
+    if (data.success) {
+      setDocs(data.data);
+    } else {
+      console.log(data);
+    }
+  };
+
+  useEffect(() => {
+    fetchItems();
+  }, []);
+
   return (
     <div className="mt-5">
       {docs &&
@@ -13,7 +34,7 @@ const ResearchItems = () => {
                 <div className="col-md-4 pt-3 text-center">
                   <img
                     className="img-research rounded mb-4"
-                    src={doc.url}
+                    src={doc.imageUrl}
                     alt={doc.description}
                   />
                 </div>

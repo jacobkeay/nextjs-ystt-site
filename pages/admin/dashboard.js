@@ -10,30 +10,7 @@ import DashMain from "../../components/admin/DashMain";
 import Spinner from "../../components/Spinner";
 import { server } from "../../config/index";
 
-const Dashboard = props => {
-  const [authed, setAuthed] = useState(props.isAuthenticated);
-
-  useEffect(async () => {
-    await checkAuthed();
-    if (!authed) {
-      Router.push("/admin/login");
-    }
-  });
-
-  const checkAuthed = async () => {
-    const token = cookie.get("token");
-
-    const res = await fetch(`/api/auth`, {
-      method: "POST",
-      headers: {
-        "x-auth-token": token,
-      },
-    });
-
-    const data = await res.json();
-    setAuthed(data.success);
-  };
-
+const Dashboard = ({ authed }) => {
   return (
     <Layout>
       <Head>
@@ -58,18 +35,11 @@ const Dashboard = props => {
 };
 
 Dashboard.getInitialProps = async ctx => {
-  const token = cookie.get("token");
-
-  const res = await fetch(`${server}/api/auth`, {
-    method: "POST",
-    headers: {
-      "x-auth-token": token,
-    },
-  });
-
-  const data = await res.json();
-  const isAuthenticated = data.success;
-  return { isAuthenticated };
+  let authed = false;
+  if (cookie.get("token")) {
+    authed = true;
+  }
+  return { authed };
 };
 
 export default Dashboard;
