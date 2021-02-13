@@ -8,11 +8,11 @@ const Index = () => (
     <Head>
       <title>Home | YSTT</title>
     </Head>
-    <div className="pt-5 mt-3 text-white text-center overlay-background">
+    <div className="pt-5 mt-3 text-white text-center">
       <img
         src="/ystt-main-hall.jpeg"
         alt="York University"
-        className="img-fluid img-responsive overlay-img"
+        className="img-fluid img-responsive"
       />
     </div>
     <div className="container my-5">
