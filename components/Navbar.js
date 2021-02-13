@@ -35,10 +35,8 @@ class Navbar extends React.Component {
               <img src="/logo-big-white.png" height="50" alt="image here"></img>
             </a>
           </Link>
-          <div className="pt-2">
-            <Link href="/">
-              <h5 className="text-white">York Student Think Tank</h5>
-            </Link>
+          <div className="pt-2 d-none d-md-block">
+            <h5 className="text-white">York Student Think Tank</h5>
           </div>
           <button
             onClick={this.toggleNavbar}
