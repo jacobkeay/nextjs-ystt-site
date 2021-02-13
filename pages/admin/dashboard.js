@@ -13,7 +13,7 @@ import { server } from "../../config/index";
 const Dashboard = ({ authed }) => {
   useEffect(() => {
     if (!authed) {
-      Router.push("/login");
+      Router.push("/admin/login");
     }
   }, []);
   return (
