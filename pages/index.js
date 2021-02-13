@@ -10,7 +10,7 @@ const Index = () => (
     </Head>
     <div className="pt-5 mt-3 text-white text-center overlay-background">
       <img
-        src="/york-hall-wide-reduced.jpg"
+        src="/ystt-main-hall.jpeg"
         alt="York University"
         className="img-fluid img-responsive overlay-img"
       />

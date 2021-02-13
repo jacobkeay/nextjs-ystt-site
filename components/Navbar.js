@@ -36,7 +36,9 @@ class Navbar extends React.Component {
             </a>
           </Link>
           <div className="pt-2">
-            <h5 className="text-white">York Student Think Tank</h5>
+            <Link href="/">
+              <h5 className="text-white">York Student Think Tank</h5>
+            </Link>
           </div>
           <button
             onClick={this.toggleNavbar}
