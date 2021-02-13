@@ -11,6 +11,11 @@ import Spinner from "../../components/Spinner";
 import { server } from "../../config/index";
 
 const Dashboard = ({ authed }) => {
+  useEffect(() => {
+    if (!authed) {
+      Router.push("/login");
+    }
+  }, []);
   return (
     <Layout>
       <Head>

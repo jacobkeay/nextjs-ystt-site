@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 const UploadTag = () => {
-  const [error, setError] = useState(null);
   const [name, setName] = useState("");
 
   const handleSubmit = e => {
