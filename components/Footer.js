@@ -15,7 +15,11 @@ const Footer = props => {
         <small>
           <p className="text-muted mb-0 p-0">
             Copyright &copy; {props.year} YSTT | Designed by{" "}
-            <a href="https://sytetech.co.uk" className="text-light m-0 p-0">
+            <a
+              href="https://sytetech.co.uk"
+              target="_blank"
+              className="text-light m-0 p-0"
+            >
               SyteTech Web Solutions
             </a>
           </p>
