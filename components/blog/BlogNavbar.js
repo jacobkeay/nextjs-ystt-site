@@ -63,7 +63,7 @@ class BlogNavbar extends React.Component {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link href="/cortado/blog">
+                <Link href="/cortado/journal">
                   <a className="nav-link">
                     <i className="fas fa-search"></i> Find an Article
                   </a>
