@@ -1,11 +1,12 @@
 import Head from "next/head";
 import BlogLayout from "../../components/blog/BlogLayout";
 import BlogIssueCard from "../../components/blog/BlogIssueCard";
+import Spinner from "../../components/Spinner";
 
 const Blog = ({ issues }) => (
   <BlogLayout>
     <Head>
-      <title>Cortado Blog | YSTT</title>
+      <title>Cortado Journal | YSTT</title>
     </Head>
     <div className="container my-5 pt-3">
       <h1 className="pt-5 text-center">Cortado Journal</h1>
@@ -17,7 +18,7 @@ const Blog = ({ issues }) => (
           })}
         </div>
       ) : (
-        <p>No issues to display yet!</p>
+        <Spinner path="/Loader.gif" text="Loading journal items..." />
       )}
     </div>
   </BlogLayout>

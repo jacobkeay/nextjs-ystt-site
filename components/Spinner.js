@@ -1,9 +1,10 @@
 import React from "react";
 
-const Spinner = () => {
+const Spinner = ({ path, text }) => {
   return (
-    <div>
-      <img src="Loader.gif" alt="loader" />
+    <div className="mt-3 text-center">
+      <img src={path} alt="loader" />
+      <p className="mt-3">{text}</p>
     </div>
   );
 };

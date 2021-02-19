@@ -45,7 +45,7 @@ const HomeCards = () => {
             We run a weekly journal on current affairs, and we're always looking
             for new writers.
           </p>
-          <Link href="/cortado/blog">
+          <Link href="/cortado/journal">
             <a className="btn btn-outline-light">
               <i className="fas fa-arrow-right"></i> Find Out More
             </a>

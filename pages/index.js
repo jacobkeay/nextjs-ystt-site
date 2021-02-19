@@ -12,7 +12,7 @@ const Index = () => (
       <img
         src="/ystt-main-hall.jpeg"
         alt="York University"
-        className="img-fluid img-responsive"
+        className="img-fluid img-responsive img-hero"
       />
     </div>
     <div className="container my-5">

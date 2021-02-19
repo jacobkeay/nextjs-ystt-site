@@ -49,9 +49,9 @@ class BlogNavbar extends React.Component {
           <div className={`${classOne}`} id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link href="/cortado/blog">
+                <Link href="/cortado/journal">
                   <a className="nav-link">
-                    <i className="far fa-edit"></i> Blog
+                    <i className="far fa-edit"></i> Journal
                   </a>
                 </Link>
               </li>
