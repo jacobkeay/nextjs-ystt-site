@@ -32,7 +32,7 @@ class BlogNavbar extends React.Component {
         <div className="container d-flex justify-between align-center">
           <div className="pt-2 d-flex align-items-center">
             <img src="/cortado-logo.jpg" height="50" alt="logo here"></img>
-            <h5 className="ml-2 text-white">Cortado Blog</h5>
+            <h5 className="ml-2 text-white">Cortado Journal</h5>
           </div>
           <button
             onClick={this.toggleNavbar}
