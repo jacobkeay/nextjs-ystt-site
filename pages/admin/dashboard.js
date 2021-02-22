@@ -23,7 +23,7 @@ const Dashboard = ({ authed }) => {
       </Head>
       {!authed && (
         <div className="container my-5 pt-3">
-          <Spinner />
+          <Spinner path="/Loader.gif" text="Loading dashboard..." />
         </div>
       )}
       {authed && (

@@ -26,11 +26,7 @@ const Blog = ({ issues }) => (
 
 Blog.getInitialProps = async ctx => {
   const articles = await fetchArticles();
-  let issues = await createIssues(articles);
-  console.log(issues);
-  if (!issues.articles) {
-    issues = null;
-  }
+  const issues = await createIssues(articles);
   return { issues };
 };
 

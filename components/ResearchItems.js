@@ -5,7 +5,7 @@ import Spinner from "./Spinner";
 
 const ResearchItems = () => {
   const [docs, setDocs] = useState([]);
-  const [loading, setLoading] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const fetchItems = async () => {
     setLoading(true);
