@@ -55,6 +55,8 @@ const UploadArticle = ({ indexTags, indexIssues }) => {
       setTimeout(() => {
         setDisplayAdded(false);
       }, 3000);
+    } else {
+      setLoading(false);
     }
   };
 
