@@ -153,7 +153,7 @@ const fetchItems = async () => {
 
   const tagData = await res.json();
 
-  let res = await fetch(`${server}/api/cortado/issues`);
+  res = await fetch(`${server}/api/cortado/issues`);
   const issueData = await res.json();
   const issues = [];
 
