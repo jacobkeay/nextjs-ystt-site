@@ -13,9 +13,9 @@ const BlogIssueCard = ({ issue }) => {
           />
         </div>
         <div className="col-md-9 border-left px-4 pt-3 mb-0 pb-0">
-          <h4 className="my-0 py-0">{issue.issue}</h4>
+          <h4 className="my-0 py-0">{issue.name}</h4>
           <small className="text-muted">
-            {issue.articles[0].createdAt.substring(0, 10)}
+            {issue.createdAt.substring(0, 10)}
           </small>
           <br />
           <span>{" - "}</span>
@@ -28,7 +28,7 @@ const BlogIssueCard = ({ issue }) => {
             );
           })}
           <br />
-          <Link href={`/cortado/${issue.articles[0].issue}`}>
+          <Link href={`/cortado/${issue.id}`}>
             <button className="btn btn-sm btn-outline-primary mt-2">
               Read More
             </button>

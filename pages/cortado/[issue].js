@@ -1,39 +1,42 @@
 import Head from "next/head";
 import React, { useState, useEffect, Fragment } from "react";
 import { useRouter } from "next/router";
+import fetch from "isomorphic-unfetch";
 import BlogLayout from "../../components/blog/BlogLayout";
 import Spinner from "../../components/Spinner";
 
-const Issue = ({ query }) => {
+const Issue = () => {
   const [articles, setArticles] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [issueName, setIssueName] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const router = useRouter();
-  const routerQuery = router.query;
-  console.log(query, routerQuery);
+  const {
+    query: { issue },
+  } = router;
 
-  const fetchItems = async () => {
+  const fetchArticles = async () => {
+    console.log("fetching articles");
     setLoading(true);
     const server = process.env.API_ADDRESS;
 
-    const res = await fetch(
-      `${server}/api/cortado/search?tag=none&issue=${query.issue}&keyword=none`,
-      {
-        method: "GET",
-      }
-    );
+    const res = await fetch(`${server}/api/cortado/issues/${issue}`, {
+      method: "GET",
+    });
 
     const data = await res.json();
-    setLoading(false);
+    console.log(data);
     if (data.success) {
+      setIssueName(data.issueName);
       setArticles(data.data);
     } else {
       console.log(data);
     }
+    setLoading(false);
   };
 
   useEffect(() => {
-    fetchItems();
+    fetchArticles();
   }, []);
 
   return (
@@ -43,7 +46,9 @@ const Issue = ({ query }) => {
       </Head>
       <div className="container my-5 pt-3 d-flex flex-column align-items-center">
         <h1 className="pt-5 text-center">Cortado Journal</h1>
-        <h2 className="pt-3 pb-5 text-center">{query.issue}</h2>
+        <h2 className="pt-3 pb-5 text-center">
+          {loading ? "Loading" : issueName}
+        </h2>
         {loading && (
           <Spinner path="/Loader.gif" text="Loading journal items..." />
         )}
@@ -90,10 +95,6 @@ const Issue = ({ query }) => {
       </div>
     </BlogLayout>
   );
-};
-
-Issue.getInitialProps = ({ query }) => {
-  return { query };
 };
 
 export default Issue;
