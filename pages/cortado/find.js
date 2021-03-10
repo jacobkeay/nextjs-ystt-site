@@ -147,11 +147,24 @@ Find.getInitialProps = async ctx => {
 const fetchItems = async () => {
   const server = process.env.API_ADDRESS;
 
-  const res = await fetch(`${server}/api/cortado/index`, {
+  let res = await fetch(`${server}/api/cortado/index`, {
     method: "GET",
   });
 
-  const data = await res.json();
+  const tagData = await res.json();
+
+  let res = await fetch(`${server}/api/cortado/issues`);
+  const issueData = await res.json();
+  const issues = [];
+
+  issueData.forEach(issue => {
+    issues.push(issue.issueName);
+  });
+
+  const data = {
+    tags: tagData.tags,
+    issues,
+  };
   if (data.tags && data.issues) {
     return data;
   } else {
