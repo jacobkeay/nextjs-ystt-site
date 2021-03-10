@@ -13,7 +13,7 @@ const BlogIssueCard = ({ issue }) => {
           />
         </div>
         <div className="col-md-9 border-left px-4 pt-3 mb-0 pb-0">
-          <h4 className="my-0 py-0">{issue.name}</h4>
+          <h4 className="my-0 py-0">{issue.num}</h4>
           <small className="text-muted">
             {issue.createdAt.substring(0, 10)}
           </small>
