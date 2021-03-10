@@ -159,6 +159,7 @@ const fetchItems = async () => {
 
   issueData.forEach(issue => {
     issues.push(issue.issueName);
+    console.log(issue.issueName);
   });
 
   const data = {
