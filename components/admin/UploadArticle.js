@@ -80,7 +80,7 @@ const UploadArticle = ({ indexTags, indexIssues }) => {
           <option value="None">Select an issue...</option>
           {indexIssues.map((indexIssue, index) => {
             return (
-              <option key={index + 1} value={indexIssue.id}>
+              <option key={index + 1} value={indexIssue.name}>
                 {indexIssue.name}
               </option>
             );
