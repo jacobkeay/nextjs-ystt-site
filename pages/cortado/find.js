@@ -157,9 +157,11 @@ const fetchItems = async () => {
   const issueData = await res.json();
   const issues = [];
 
-  issueData.forEach(issue => {
-    issues.push(issue.issueName);
-    console.log(issue.issueName);
+  console.log(issueData);
+
+  issueData.data.forEach(issue => {
+    issues.push(issue.num);
+    console.log(issue.num);
   });
 
   const data = {

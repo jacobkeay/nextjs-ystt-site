@@ -21,7 +21,17 @@ const BlogDisplayIssues = () => {
 
     const data = await res.json();
     if (data.success) {
-      setIssues(data.data);
+      setIssues(
+        data.data.sort(function (a, b) {
+          if (a.createdAt < b.createdAt) {
+            return 1;
+          }
+          if (a.createdAt > b.createdAt) {
+            return -1;
+          }
+          return 0;
+        })
+      );
       setLoading(false);
     } else {
       console.log("Error: major fuckup");

@@ -9,15 +9,17 @@ const UploadIssue = ({ setLoading, fetchItems }) => {
     e.preventDefault();
     setLoading(true);
 
+    console.log("Uploading issue");
+
     const server = process.env.API_ADDRESS;
     if (issue) {
-      const res = await fetch(`${server}/api/cortado/index/issues`, {
+      const res = await fetch(`${server}/api/cortado/issues`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${cookie.get("token")}`,
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ issue }),
+        body: JSON.stringify({ num: issue }),
       });
 
       await res.json();

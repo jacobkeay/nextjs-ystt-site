@@ -12,11 +12,47 @@ const DashCortado = () => {
   const fetchItems = async () => {
     const server = process.env.API_ADDRESS;
 
-    const res = await fetch(`${server}/api/cortado/index`, {
+    let res = await fetch(`${server}/api/cortado/index`, {
       method: "GET",
     });
 
-    const data = await res.json();
+    const tagData = await res.json();
+
+    res = await fetch(`${server}/api/cortado/issues`);
+    const issueData = await res.json();
+    const issues = [];
+
+    issueData.data.forEach(issue => {
+      issues.push({
+        name: issue.num,
+        id: issue.id,
+        createdAt: issue.createdAt,
+      });
+    });
+
+    const data = {
+      tags: tagData.tags.sort(function (a, b) {
+        if (a < b) {
+          return -1;
+        }
+        if (a > b) {
+          return 1;
+        }
+        return 0;
+      }),
+      issues: issues.sort(function (a, b) {
+        if (a.createdAt < b.createdAt) {
+          return -1;
+        }
+        if (a.createdAt > b.createdAt) {
+          return 1;
+        }
+        return 0;
+      }),
+    };
+
+    console.log(data.issues);
+
     if (data.tags && data.issues) {
       setTags(data.tags);
       setIssues(data.issues);
@@ -39,7 +75,7 @@ const DashCortado = () => {
             issues.map((issue, index) => {
               return (
                 <span key={index + 1} className="text-muted p-0 m-0">
-                  - {issue}{" "}
+                  - {issue.name}{" "}
                 </span>
               );
             })

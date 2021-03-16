@@ -37,10 +37,14 @@ const UploadArticle = ({ indexTags, indexIssues }) => {
     formData.append("author", author);
     formData.append("body", body);
     formData.append("tags", tags);
-    formData.append("issue", issue);
-
+    indexIssues.forEach(item => {
+      if (item.name === issue) {
+        formData.append("issueId", item.id);
+      }
+    });
     const server = process.env.API_ADDRESS;
     if (title && author && body && tags && issue && file) {
+      console.log("Sending");
       const res = await fetch(`${server}/api/cortado`, {
         method: "POST",
         headers: {
@@ -50,6 +54,7 @@ const UploadArticle = ({ indexTags, indexIssues }) => {
       });
 
       const data = await res.json();
+      console.log(data);
       setLoading(false);
       setDisplayAdded(true);
       setTimeout(() => {
@@ -74,8 +79,8 @@ const UploadArticle = ({ indexTags, indexIssues }) => {
         >
           {indexIssues.map((indexIssue, index) => {
             return (
-              <option key={index + 1} value={indexIssue}>
-                {indexIssue}
+              <option key={index + 1} value={indexIssue.id}>
+                {indexIssue.name}
               </option>
             );
           })}
