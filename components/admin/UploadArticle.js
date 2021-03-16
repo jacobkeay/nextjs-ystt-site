@@ -43,7 +43,7 @@ const UploadArticle = ({ indexTags, indexIssues }) => {
       }
     });
     const server = process.env.API_ADDRESS;
-    if (title && author && body && tags && issue && file) {
+    if (title && author && body && tags && issue && file && issue !== "None") {
       console.log("Sending");
       const res = await fetch(`${server}/api/cortado`, {
         method: "POST",
