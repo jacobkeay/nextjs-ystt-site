@@ -9,7 +9,7 @@ const UploadArticle = ({ indexTags, indexIssues }) => {
   const [author, setAuthor] = useState("");
   const [body, setBody] = useState("");
   const [tags, setTags] = useState([]);
-  const [issue, setIssue] = useState("Issue 1");
+  const [issue, setIssue] = useState("None");
   const [loading, setLoading] = useState(false);
   const [displayAdded, setDisplayAdded] = useState(false);
 
@@ -77,6 +77,7 @@ const UploadArticle = ({ indexTags, indexIssues }) => {
           className="form-control"
           id="issue"
         >
+          <option value="None">Select an issue...</option>
           {indexIssues.map((indexIssue, index) => {
             return (
               <option key={index + 1} value={indexIssue.id}>
