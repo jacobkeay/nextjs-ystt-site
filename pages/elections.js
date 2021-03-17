@@ -81,7 +81,7 @@ const Elections = () => (
           href="https://firebasestorage.googleapis.com/v0/b/ystt-api.appspot.com/o/alameen_communications.pdf?alt=media"
           target="_blank"
         >
-          <i className="far fa-sticky-note"></i> Alameen
+          <i className="far fa-sticky-note"></i> Alameen Kudehinbu
         </a>
         <a
           className="btn btn-outline-dark mx-2"
