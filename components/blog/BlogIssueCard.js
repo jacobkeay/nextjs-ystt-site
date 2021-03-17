@@ -18,12 +18,12 @@ const BlogIssueCard = ({ issue }) => {
             {issue.createdAt.substring(0, 10)}
           </small>
           <br />
-          <span>{" - "}</span>
+          <span>{" <> "}</span>
           {issue.articles.map(article => {
             return (
               <span key={article.id}>
                 <span className="text-muted px-2">{article.title}</span>
-                <span>{"-"}</span>
+                <span>{"<>"}</span>
               </span>
             );
           })}
