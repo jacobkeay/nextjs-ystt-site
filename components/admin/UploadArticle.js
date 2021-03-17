@@ -159,7 +159,7 @@ const UploadArticle = ({ indexTags, indexIssues }) => {
           className="form-control"
           onChange={e => setBody(e.target.value)}
           id="description"
-          rows="3"
+          rows="8"
           placeholder="Enter article text..."
         ></textarea>
       </div>
