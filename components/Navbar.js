@@ -64,6 +64,11 @@ class Navbar extends React.Component {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link href="/elections">
+                  <a className="nav-link">Elections</a>
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link href="/research">
                   <a className="nav-link">Research</a>
                 </Link>
